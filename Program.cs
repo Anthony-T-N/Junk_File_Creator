@@ -17,7 +17,38 @@ namespace Junk_File_Creator
             System.Console.WriteLine("Please select one of the following option: ");
             while (false)
             {
-                System.Console.WriteLine(" ");
+                Console.WriteLine("");
+                Console.Write("1) Single Junk File: ");
+                Console.Write("2) Mutiple Junk Files: ");
+                Console.Write("3) Periodically generate Junk Files:");
+                Console.Write("4) Exit program.");
+                Console.WriteLine("");
+                string user_input = Console.ReadLine();
+                int converted_user_input = 0;
+                try
+                {
+                    converted_user_input = Convert.ToInt32(user_input);
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine($"Unable to parse '{converted_user_input}'");
+                }
+                if (converted_user_input == 1)
+                {
+                    ;
+                }
+                else if (converted_user_input == 2)
+                {
+                    ;
+                }
+                else if (converted_user_input == 3)
+                {
+                    ;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid Input - Please Try Again");
+                }
             }
         }
         public static void create_junk_file()
