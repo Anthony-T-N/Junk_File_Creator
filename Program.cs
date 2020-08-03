@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Collections.Generic;
 
 namespace Junk_File_Creator
 {
@@ -9,6 +10,7 @@ namespace Junk_File_Creator
         {
             Program main_program = new Program();
             main_program.menu();
+            //Temp
             Program.create_junk_file();
         }
         public void menu()
@@ -72,6 +74,17 @@ namespace Junk_File_Creator
                     }
                 }
             }
+        }
+        public string file_name_generator()
+        {
+            List<string> generated_name = new List<string>();
+            var rand = new Random();
+            rand.Next(generated_name);
+            for (int i = 0; i <= 5; i++)
+            {
+
+            }
+            return "";
         }
     }
 }
