@@ -12,6 +12,7 @@ namespace Junk_File_Creator
             main_program.menu();
             //Temp
             Program.create_junk_file();
+            Program.file_name_generator();
         }
         public void menu()
         {
@@ -75,7 +76,7 @@ namespace Junk_File_Creator
                 }
             }
         }
-        public string file_name_generator()
+        public static string file_name_generator()
         {
             List<char> generated_name = new List<char>();
             string char_string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -83,6 +84,10 @@ namespace Junk_File_Creator
             for (int i = 0; i <= 5; i++)
             {
                 generated_name.Add(char_string[rand.Next(0, char_string.Length)]);
+            }
+            for (int i = 0; i <= generated_name.Count - 1; i++)
+            {
+                System.Console.WriteLine(generated_name[i]);
             }
             return "";
         }
