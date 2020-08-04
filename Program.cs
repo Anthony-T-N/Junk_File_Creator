@@ -77,12 +77,12 @@ namespace Junk_File_Creator
         }
         public string file_name_generator()
         {
-            List<string> generated_name = new List<string>();
+            List<char> generated_name = new List<char>();
+            string char_string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
             var rand = new Random();
-            rand.Next(generated_name);
             for (int i = 0; i <= 5; i++)
             {
-
+                generated_name.Add(char_string[rand.Next(0, char_string.Length)]);
             }
             return "";
         }
