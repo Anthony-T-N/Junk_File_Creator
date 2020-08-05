@@ -85,9 +85,14 @@ namespace Junk_File_Creator
             {
                 generated_name.Add(char_string[rand.Next(0, char_string.Length)]);
             }
+            generated_name.Add('.');
+            for (int i = 0; i <= 3; i++)
+            {
+                generated_name.Add(char_string[rand.Next(0, char_string.Length)]);
+            }
             for (int i = 0; i <= generated_name.Count - 1; i++)
             {
-                System.Console.WriteLine(generated_name[i]);
+                System.Console.Write(generated_name[i]);
             }
             return "";
         }
