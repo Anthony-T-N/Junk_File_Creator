@@ -94,7 +94,7 @@ namespace Junk_File_Creator
             {
                 System.Console.Write(generated_name[i]);
             }
-            return "";
+            return generated_name.ToString();
         }
     }
 }
