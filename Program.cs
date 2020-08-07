@@ -57,7 +57,7 @@ namespace Junk_File_Creator
         public static void create_junk_file()
         {
             //string fileName = @":\Users\Anthony\Desktop\123.data";
-            string fileName = "123.txt";
+            string fileName = file_name_generator();
             if (File.Exists(fileName))
             {
                 Console.WriteLine($"{fileName} already exists!");
@@ -94,7 +94,8 @@ namespace Junk_File_Creator
             {
                 System.Console.Write(generated_name[i]);
             }
-            return generated_name.ToString();
+            string final_string = string.Join("", generated_name);
+            return final_string;
         }
     }
 }
