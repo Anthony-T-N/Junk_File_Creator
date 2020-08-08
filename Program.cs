@@ -56,16 +56,16 @@ namespace Junk_File_Creator
         }
         public static void create_junk_file()
         {
-            //string fileName = @":\Users\Anthony\Desktop\123.data";
-            string fileName = file_name_generator();
-            if (File.Exists(fileName))
+            //string file_name = @":\Users\Anthony\Desktop\123.data";
+            string file_name = file_name_generator();
+            if (File.Exists(file_name))
             {
-                Console.WriteLine($"{fileName} already exists!");
+                Console.WriteLine($"{file_name} already exists!");
                 return;
             }
 
-            // Create a new file     
-            using (FileStream fs = new FileStream(fileName, FileMode.CreateNew))
+            // Create a new file
+            using (FileStream fs = new FileStream(file_name, FileMode.CreateNew))
             {
                 using (BinaryWriter w = new BinaryWriter(fs))
                 {
@@ -81,12 +81,12 @@ namespace Junk_File_Creator
             List<char> generated_name = new List<char>();
             string char_string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
             var rand = new Random();
-            for (int i = 0; i <= 5; i++)
+            for (int i = 0; i <= rand.Next(0, 5); i++)
             {
                 generated_name.Add(char_string[rand.Next(0, char_string.Length)]);
             }
             generated_name.Add('.');
-            for (int i = 0; i <= 3; i++)
+            for (int i = 0; i <= rand.Next(0, 3); i++)
             {
                 generated_name.Add(char_string[rand.Next(0, char_string.Length)]);
             }
