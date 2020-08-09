@@ -56,7 +56,16 @@ namespace Junk_File_Creator
         }
         public static void create_junk_file()
         {
-            //string file_name = @":\Users\Anthony\Desktop\123.data";
+            string temp_file_name = @":\Users\Anthony\Desktop\123.data";
+
+            //Experimenting - Remove after.
+            string entered_filepath = Console.ReadLine();
+            entered_filepath = $@":\{entered_filepath}";
+            System.Console.WriteLine(entered_filepath);
+            System.Console.WriteLine(temp_file_name);
+            System.Console.WriteLine("END");
+            return;
+
             string file_name = file_name_generator();
             if (File.Exists(file_name))
             {
