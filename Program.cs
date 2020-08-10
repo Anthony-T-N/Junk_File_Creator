@@ -56,14 +56,14 @@ namespace Junk_File_Creator
         }
         public static void create_junk_file()
         {
-            string temp_file_name = @":\Users\Anthony\Desktop\123.data";
-
+            //string temp_file_name = @":\Users\Anthony\Desktop\123.data";
+            string temp_file_name = @":\Users\Anthony\source\repos\Junk_File_Creator\bin\Debug\netcoreapp3.1\Temp_Folder\";
             //Experimenting - Remove after.
             string entered_filepath = Console.ReadLine();
+            entered_filepath = temp_file_name + entered_filepath;
             entered_filepath = $@":\{entered_filepath}";
             System.Console.WriteLine(entered_filepath);
             System.Console.WriteLine(temp_file_name);
-            System.Console.WriteLine("END");
             return;
 
             string file_name = file_name_generator();
