@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Timers;
 using System.Collections.Generic;
 
 namespace Junk_File_Creator
@@ -11,14 +12,14 @@ namespace Junk_File_Creator
             Program main_program = new Program();
             main_program.menu();
             //Temp
-            Program.create_junk_file();
-            Program.file_name_generator();
+            //Program.create_junk_file();
+            //Program.file_name_generator();
         }
         public void menu()
         {
             System.Console.WriteLine("Welcome to the 'Junk_File_Creator'");
             System.Console.WriteLine("Please select one of the following option: ");
-            while (false)
+            while (true)
             {
                 Console.WriteLine("");
                 Console.Write("1) Single Junk File: ");
@@ -46,7 +47,10 @@ namespace Junk_File_Creator
                 }
                 else if (converted_user_input == 3)
                 {
-                    ;
+                    Timer t = new Timer(TimeSpan.FromMinutes(0.1).TotalMilliseconds);
+                    t.AutoReset = true;
+                    t.Elapsed += new System.Timers.ElapsedEventHandler(periodical_creation);
+                    t.Start();
                 }
                 else
                 {
@@ -54,8 +58,14 @@ namespace Junk_File_Creator
                 }
             }
         }
+        private static void periodical_creation(object sender, ElapsedEventArgs e)
+        {
+            create_junk_file();
+        }
+
         public static void create_junk_file()
         {
+            /*
             //string temp_file_name = @":\Users\Anthony\Desktop\123.data";
             string temp_file_name = @":\Users\Anthony\source\repos\Junk_File_Creator\bin\Debug\netcoreapp3.1\Temp_Folder\";
             //Experimenting - Remove after.
@@ -65,6 +75,7 @@ namespace Junk_File_Creator
             System.Console.WriteLine(entered_filepath);
             System.Console.WriteLine(temp_file_name);
             return;
+            */
 
             string file_name = file_name_generator();
             if (File.Exists(file_name))
