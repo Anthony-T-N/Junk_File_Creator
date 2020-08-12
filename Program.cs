@@ -24,7 +24,7 @@ namespace Junk_File_Creator
                 Console.WriteLine("");
                 Console.Write("1) Single Junk File: ");
                 Console.Write("2) Mutiple Junk Files: ");
-                Console.Write("3) Periodically generate Junk Files:");
+                Console.Write("3) Periodically generate Junk Files: ");
                 Console.Write("4) Exit program.");
                 Console.WriteLine("");
                 string user_input = Console.ReadLine();
@@ -39,7 +39,7 @@ namespace Junk_File_Creator
                 }
                 if (converted_user_input == 1)
                 {
-                    ;
+                    create_junk_file();
                 }
                 else if (converted_user_input == 2)
                 {
@@ -51,6 +51,10 @@ namespace Junk_File_Creator
                     t.AutoReset = true;
                     t.Elapsed += new System.Timers.ElapsedEventHandler(periodical_creation);
                     t.Start();
+                }
+                else if (converted_user_input == 4)
+                {
+                    System.Environment.Exit(0);
                 }
                 else
                 {
@@ -91,7 +95,7 @@ namespace Junk_File_Creator
                 {
                     for (int i = 0; i < 11; i++)
                     {
-                        w.Write(i);
+                        w.Write(i.ToString());
                     }
                 }
             }
