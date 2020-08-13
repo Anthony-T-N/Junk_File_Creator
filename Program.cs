@@ -43,7 +43,9 @@ namespace Junk_File_Creator
                 }
                 else if (converted_user_input == 2)
                 {
-                    ;
+                    Console.WriteLine("Amount to create: ");
+                    int amount = Convert.ToInt32(Console.ReadLine());
+                    mutiple_junk_files(amount);
                 }
                 else if (converted_user_input == 3)
                 {
@@ -65,6 +67,14 @@ namespace Junk_File_Creator
         private static void periodical_creation(object sender, ElapsedEventArgs e)
         {
             create_junk_file();
+        }
+
+        private static void mutiple_junk_files(int amount)
+        {
+            for (int i = 0; i <= amount; i++)
+            {
+                create_junk_file();
+            }
         }
 
         public static void create_junk_file()
@@ -114,11 +124,8 @@ namespace Junk_File_Creator
             {
                 generated_name.Add(char_string[rand.Next(0, char_string.Length)]);
             }
-            for (int i = 0; i <= generated_name.Count - 1; i++)
-            {
-                System.Console.Write(generated_name[i]);
-            }
             string final_string = string.Join("", generated_name);
+            System.Console.WriteLine(final_string);
             return final_string;
         }
     }
