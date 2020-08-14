@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Timers;
 using System.Collections.Generic;
+using System.Net;
 
 namespace Junk_File_Creator
 {
@@ -25,7 +26,8 @@ namespace Junk_File_Creator
                 Console.Write("1) Single Junk File: ");
                 Console.Write("2) Mutiple Junk Files: ");
                 Console.Write("3) Periodically generate Junk Files: ");
-                Console.Write("4) Exit program.");
+                Console.Write("4) Change directory path: ");
+                Console.Write("5) Exit program.");
                 Console.WriteLine("");
                 string user_input = Console.ReadLine();
                 int converted_user_input = 0;
@@ -56,6 +58,10 @@ namespace Junk_File_Creator
                 }
                 else if (converted_user_input == 4)
                 {
+
+                }
+                else if (converted_user_input == 5)
+                {
                     System.Environment.Exit(0);
                 }
                 else
@@ -75,6 +81,10 @@ namespace Junk_File_Creator
             {
                 create_junk_file();
             }
+        }
+        private static void change_directory_path()
+        {
+
         }
 
         public static void create_junk_file()
@@ -103,7 +113,7 @@ namespace Junk_File_Creator
             {
                 using (BinaryWriter w = new BinaryWriter(fs))
                 {
-                    for (int i = 0; i < 11; i++)
+                    for (int i = 0; i < 50; i++)
                     {
                         w.Write(i.ToString());
                     }
