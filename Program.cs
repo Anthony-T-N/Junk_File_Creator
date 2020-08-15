@@ -2,7 +2,6 @@ using System;
 using System.IO;
 using System.Timers;
 using System.Collections.Generic;
-using System.Net;
 
 namespace Junk_File_Creator
 {
@@ -28,6 +27,8 @@ namespace Junk_File_Creator
                 Console.Write("3) Periodically generate Junk Files: ");
                 Console.Write("4) Change directory path: ");
                 Console.Write("5) Exit program.");
+                Console.WriteLine("");
+                Console.WriteLine("Current directory_path: ");
                 Console.WriteLine("");
                 string user_input = Console.ReadLine();
                 int converted_user_input = 0;
@@ -84,11 +85,6 @@ namespace Junk_File_Creator
         }
         private static void change_directory_path()
         {
-
-        }
-
-        public static void create_junk_file()
-        {
             /*
             //string temp_file_name = @":\Users\Anthony\Desktop\123.data";
             string temp_file_name = @":\Users\Anthony\source\repos\Junk_File_Creator\bin\Debug\netcoreapp3.1\Temp_Folder\";
@@ -100,7 +96,10 @@ namespace Junk_File_Creator
             System.Console.WriteLine(temp_file_name);
             return;
             */
+        }
 
+        public static void create_junk_file()
+        {
             string file_name = file_name_generator();
             if (File.Exists(file_name))
             {
