@@ -11,9 +11,6 @@ namespace Junk_File_Creator
         {
             Program main_program = new Program();
             main_program.menu();
-            //Temp
-            //Program.create_junk_file();
-            //Program.file_name_generator();
         }
         public void menu()
         {
@@ -21,6 +18,7 @@ namespace Junk_File_Creator
             System.Console.WriteLine("Please select one of the following option: ");
             while (true)
             {
+                string current_path = "NIL";
                 Console.WriteLine("");
                 Console.Write("1) Single Junk File: ");
                 Console.Write("2) Mutiple Junk Files: ");
@@ -28,7 +26,7 @@ namespace Junk_File_Creator
                 Console.Write("4) Change directory path: ");
                 Console.Write("5) Exit program.");
                 Console.WriteLine("");
-                Console.WriteLine("Current directory_path: ");
+                Console.WriteLine("Current directory_path: " + current_path);
                 Console.WriteLine("");
                 string user_input = Console.ReadLine();
                 int converted_user_input = 0;
@@ -38,7 +36,7 @@ namespace Junk_File_Creator
                 }
                 catch (FormatException)
                 {
-                    Console.WriteLine($"Unable to parse '{converted_user_input}'");
+                    Console.WriteLine($"[-] Unable to parse '{converted_user_input}'");
                 }
                 if (converted_user_input == 1)
                 {
@@ -59,7 +57,7 @@ namespace Junk_File_Creator
                 }
                 else if (converted_user_input == 4)
                 {
-
+                    current_path = change_directory_path(current_path);
                 }
                 else if (converted_user_input == 5)
                 {
@@ -67,7 +65,7 @@ namespace Junk_File_Creator
                 }
                 else
                 {
-                    Console.WriteLine("Invalid Input - Please Try Again");
+                    Console.WriteLine("[-] Invalid Input - Please Try Again");
                 }
             }
         }
@@ -83,19 +81,25 @@ namespace Junk_File_Creator
                 create_junk_file();
             }
         }
-        private static void change_directory_path()
+        private static string change_directory_path(string current_path)
         {
+            // @ = Verbatim String Literal (Escape is inapplicable)
             /*
-            //string temp_file_name = @":\Users\Anthony\Desktop\123.data";
+            string temp_file_name = @":\Users\Anthony\Desktop\123.data";
             string temp_file_name = @":\Users\Anthony\source\repos\Junk_File_Creator\bin\Debug\netcoreapp3.1\Temp_Folder\";
             //Experimenting - Remove after.
-            string entered_filepath = Console.ReadLine();
             entered_filepath = temp_file_name + entered_filepath;
             entered_filepath = $@":\{entered_filepath}";
             System.Console.WriteLine(entered_filepath);
             System.Console.WriteLine(temp_file_name);
             return;
             */
+            string temp_file_name = @":\Users\Anthony\Desktop\123.data";
+            string entered_filepath = Console.ReadLine();
+            System.Console.WriteLine(@"" + entered_filepath);
+            System.Console.WriteLine(temp_file_name);
+            System.Console.WriteLine(@"" + temp_file_name);
+            return "";
         }
 
         public static void create_junk_file()
