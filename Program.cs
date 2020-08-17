@@ -16,9 +16,9 @@ namespace Junk_File_Creator
         {
             System.Console.WriteLine("Welcome to the 'Junk_File_Creator'");
             System.Console.WriteLine("Please select one of the following option: ");
+            string current_path = "NIL";
             while (true)
             {
-                string current_path = "NIL";
                 Console.WriteLine("");
                 Console.Write("1) Single Junk File: ");
                 Console.Write("2) Mutiple Junk Files: ");
@@ -57,7 +57,8 @@ namespace Junk_File_Creator
                 }
                 else if (converted_user_input == 4)
                 {
-                    current_path = change_directory_path(current_path);
+                    string entered_filepath = @"" + Console.ReadLine();
+                    current_path = change_directory_path(entered_filepath);
                 }
                 else if (converted_user_input == 5)
                 {
@@ -95,11 +96,10 @@ namespace Junk_File_Creator
             return;
             */
             string temp_file_name = @":\Users\Anthony\Desktop\123.data";
-            string entered_filepath = Console.ReadLine();
-            System.Console.WriteLine(@"" + entered_filepath);
+            System.Console.WriteLine(current_path);
             System.Console.WriteLine(temp_file_name);
             System.Console.WriteLine(@"" + temp_file_name);
-            return "";
+            return current_path;
         }
 
         public static void create_junk_file()
