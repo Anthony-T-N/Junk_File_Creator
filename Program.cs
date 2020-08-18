@@ -40,13 +40,13 @@ namespace Junk_File_Creator
                 }
                 if (converted_user_input == 1)
                 {
-                    create_junk_file();
+                    create_junk_file(current_path);
                 }
                 else if (converted_user_input == 2)
                 {
                     Console.WriteLine("Amount to create: ");
                     int amount = Convert.ToInt32(Console.ReadLine());
-                    mutiple_junk_files(amount);
+                    mutiple_junk_files(amount, current_path);
                 }
                 else if (converted_user_input == 3)
                 {
@@ -57,6 +57,7 @@ namespace Junk_File_Creator
                 }
                 else if (converted_user_input == 4)
                 {
+                    System.Console.WriteLine("Enter new path directory");
                     string entered_filepath = @"" + Console.ReadLine();
                     current_path = change_directory_path(entered_filepath);
                 }
@@ -72,14 +73,15 @@ namespace Junk_File_Creator
         }
         private static void periodical_creation(object sender, ElapsedEventArgs e)
         {
-            create_junk_file();
+            //Determine how to pass current_path here.
+            //create_junk_file();
         }
 
-        private static void mutiple_junk_files(int amount)
+        private static void mutiple_junk_files(int amount, string current_path)
         {
             for (int i = 0; i <= amount; i++)
             {
-                create_junk_file();
+                create_junk_file(current_path);
             }
         }
         private static string change_directory_path(string current_path)
@@ -102,9 +104,10 @@ namespace Junk_File_Creator
             return current_path;
         }
 
-        public static void create_junk_file()
+        public static void create_junk_file(string current_path)
         {
-            string file_name = file_name_generator();
+            string file_name = current_path + file_name_generator();
+            System.Console.WriteLine(file_name);
             if (File.Exists(file_name))
             {
                 Console.WriteLine($"{file_name} already exists!");
