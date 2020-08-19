@@ -20,11 +20,11 @@ namespace Junk_File_Creator
             while (true)
             {
                 Console.WriteLine("");
-                Console.Write("1) Single Junk File: ");
-                Console.Write("2) Mutiple Junk Files: ");
-                Console.Write("3) Periodically generate Junk Files: ");
-                Console.Write("4) Change directory path: ");
-                Console.Write("5) Exit program.");
+                Console.WriteLine("1) Single Junk File: ");
+                Console.WriteLine("2) Mutiple Junk Files: ");
+                Console.WriteLine("3) Periodically generate Junk Files: ");
+                Console.WriteLine("4) Change directory path: ");
+                Console.WriteLine("5) Exit program.");
                 Console.WriteLine("");
                 Console.WriteLine("Current directory_path: " + current_path);
                 Console.WriteLine("");
@@ -58,8 +58,8 @@ namespace Junk_File_Creator
                 else if (converted_user_input == 4)
                 {
                     System.Console.WriteLine("Enter new path directory");
-                    string entered_filepath = @"" + Console.ReadLine();
-                    current_path = change_directory_path(entered_filepath);
+                    current_path = @"" + Console.ReadLine();
+                    //current_path = change_directory_path(entered_filepath);
                 }
                 else if (converted_user_input == 5)
                 {
@@ -79,35 +79,16 @@ namespace Junk_File_Creator
 
         private static void mutiple_junk_files(int amount, string current_path)
         {
-            for (int i = 0; i <= amount; i++)
+            for (int i = 0; i <= amount - 1; i++)
             {
                 create_junk_file(current_path);
             }
-        }
-        private static string change_directory_path(string current_path)
-        {
-            // @ = Verbatim String Literal (Escape is inapplicable)
-            /*
-            string temp_file_name = @":\Users\Anthony\Desktop\123.data";
-            string temp_file_name = @":\Users\Anthony\source\repos\Junk_File_Creator\bin\Debug\netcoreapp3.1\Temp_Folder\";
-            //Experimenting - Remove after.
-            entered_filepath = temp_file_name + entered_filepath;
-            entered_filepath = $@":\{entered_filepath}";
-            System.Console.WriteLine(entered_filepath);
-            System.Console.WriteLine(temp_file_name);
-            return;
-            */
-            string temp_file_name = @":\Users\Anthony\Desktop\123.data";
-            System.Console.WriteLine(current_path);
-            System.Console.WriteLine(temp_file_name);
-            System.Console.WriteLine(@"" + temp_file_name);
-            return current_path;
         }
 
         public static void create_junk_file(string current_path)
         {
             string file_name = current_path + file_name_generator();
-            System.Console.WriteLine(file_name);
+            System.Console.WriteLine("[+] " + file_name);
             if (File.Exists(file_name))
             {
                 Console.WriteLine($"{file_name} already exists!");
@@ -141,7 +122,6 @@ namespace Junk_File_Creator
                 generated_name.Add(char_string[rand.Next(0, char_string.Length)]);
             }
             string final_string = string.Join("", generated_name);
-            System.Console.WriteLine(final_string);
             return final_string;
         }
     }
