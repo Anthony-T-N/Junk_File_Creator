@@ -12,22 +12,22 @@ namespace Junk_File_Creator
             Program main_program = new Program();
             main_program.menu();
         }
+        string current_path = "NIL";
         public void menu()
         {
             System.Console.WriteLine("Welcome to the 'Junk_File_Creator'");
             System.Console.WriteLine("Please select one of the following option: ");
-            string current_path = "NIL";
             while (true)
             {
-                Console.WriteLine("");
-                Console.WriteLine("1) Single Junk File: ");
-                Console.WriteLine("2) Mutiple Junk Files: ");
-                Console.WriteLine("3) Periodically generate Junk Files: ");
-                Console.WriteLine("4) Change directory path: ");
-                Console.WriteLine("5) Exit program.");
-                Console.WriteLine("");
-                Console.WriteLine("Current directory_path: " + current_path);
-                Console.WriteLine("");
+                System.Console.WriteLine("");
+                System.Console.WriteLine("1) Single Junk File: ");
+                System.Console.WriteLine("2) Mutiple Junk Files: ");
+                System.Console.WriteLine("3) Periodically generate Junk Files: ");
+                System.Console.WriteLine("4) Change directory path: ");
+                System.Console.WriteLine("5) Exit program.");
+                System.Console.WriteLine("");
+                System.Console.WriteLine("Current directory_path: " + current_path);
+                System.Console.WriteLine("");
                 string user_input = Console.ReadLine();
                 int converted_user_input = 0;
                 try
@@ -71,10 +71,10 @@ namespace Junk_File_Creator
                 }
             }
         }
-        private static void periodical_creation(object sender, ElapsedEventArgs e)
+        private void periodical_creation(object sender, ElapsedEventArgs e)
         {
             //Determine how to pass current_path here.
-            //create_junk_file();
+            create_junk_file(current_path);
         }
 
         private static void mutiple_junk_files(int amount, string current_path)
