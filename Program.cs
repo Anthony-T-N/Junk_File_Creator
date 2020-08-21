@@ -12,7 +12,8 @@ namespace Junk_File_Creator
             Program main_program = new Program();
             main_program.menu();
         }
-        string current_path = "NIL";
+        // Get the current directory.
+        string current_path = Directory.GetCurrentDirectory();
         public void menu()
         {
             System.Console.WriteLine("Welcome to the 'Junk_File_Creator'");
@@ -73,7 +74,6 @@ namespace Junk_File_Creator
         }
         private void periodical_creation(object sender, ElapsedEventArgs e)
         {
-            //Determine how to pass current_path here.
             create_junk_file(current_path);
         }
 
