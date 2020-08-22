@@ -37,7 +37,7 @@ namespace Junk_File_Creator
                 }
                 catch (FormatException)
                 {
-                    Console.WriteLine($"[-] Unable to parse '{converted_user_input}'");
+                    Console.WriteLine($"[-] Unable to parse '{user_input}'");
                 }
                 if (converted_user_input == 1)
                 {
@@ -46,8 +46,15 @@ namespace Junk_File_Creator
                 else if (converted_user_input == 2)
                 {
                     Console.WriteLine("Amount to create: ");
-                    int amount = Convert.ToInt32(Console.ReadLine());
-                    mutiple_junk_files(amount, current_path);
+                    try
+                    {
+                        int amount = Convert.ToInt32(Console.ReadLine());
+                        mutiple_junk_files(amount, current_path);
+                    }
+                    catch (FormatException)
+                    {
+                        Console.WriteLine("[-] Unable to parse");
+                    }
                 }
                 else if (converted_user_input == 3)
                 {
@@ -60,7 +67,6 @@ namespace Junk_File_Creator
                 {
                     System.Console.WriteLine("Enter new path directory");
                     current_path = @"" + Console.ReadLine();
-                    //current_path = change_directory_path(entered_filepath);
                 }
                 else if (converted_user_input == 5)
                 {
@@ -84,14 +90,13 @@ namespace Junk_File_Creator
                 create_junk_file(current_path);
             }
         }
-
         public static void create_junk_file(string current_path)
         {
             string file_name = current_path + file_name_generator();
             System.Console.WriteLine("[+] " + file_name);
             if (File.Exists(file_name))
             {
-                Console.WriteLine($"{file_name} already exists!");
+                Console.WriteLine($"[-] {file_name} already exists!");
                 return;
             }
 
