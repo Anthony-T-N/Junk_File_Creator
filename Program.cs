@@ -7,13 +7,16 @@ namespace Junk_File_Creator
 {
     class Program
     {
+        // Use common file extensions.
+        // Control file size.
         static void Main(string[] args)
         {
             Program main_program = new Program();
             main_program.menu();
         }
         // Get the current directory.
-        string current_path = Directory.GetCurrentDirectory();
+        string current_path = System.AppDomain.CurrentDomain.BaseDirectory;
+        bool use_file_ext = false;
         public void menu()
         {
             System.Console.WriteLine("Welcome to the 'Junk_File_Creator'");
@@ -28,6 +31,7 @@ namespace Junk_File_Creator
                 System.Console.WriteLine("5) Exit program.");
                 System.Console.WriteLine("");
                 System.Console.WriteLine("Current directory_path: " + current_path);
+                System.Console.WriteLine("Use existing file extensions: " + use_file_ext);
                 System.Console.WriteLine("");
                 string user_input = Console.ReadLine();
                 int converted_user_input = 0;
