@@ -28,7 +28,8 @@ namespace Junk_File_Creator
                 System.Console.WriteLine("2) Mutiple Junk Files: ");
                 System.Console.WriteLine("3) Periodically generate Junk Files: ");
                 System.Console.WriteLine("4) Change directory path: ");
-                System.Console.WriteLine("5) Exit program.");
+                System.Console.WriteLine("5) Use file extensions: ");
+                System.Console.WriteLine("6) Exit program.");
                 System.Console.WriteLine("");
                 System.Console.WriteLine("Current directory_path: " + current_path);
                 System.Console.WriteLine("Use existing file extensions: " + use_file_ext);
@@ -74,6 +75,17 @@ namespace Junk_File_Creator
                 }
                 else if (converted_user_input == 5)
                 {
+                    if (use_file_ext == false)
+                    {
+                        use_file_ext = true;
+                    }
+                    else
+                    {
+                        use_file_ext = false;
+                    }
+                }
+                else if (converted_user_input == 6)
+                {
                     System.Environment.Exit(0);
                 }
                 else
@@ -87,16 +99,16 @@ namespace Junk_File_Creator
             create_junk_file(current_path);
         }
 
-        private static void mutiple_junk_files(int amount, string current_path)
+        private void mutiple_junk_files(int amount, string current_path)
         {
             for (int i = 0; i <= amount - 1; i++)
             {
                 create_junk_file(current_path);
             }
         }
-        public static void create_junk_file(string current_path)
+        public void create_junk_file(string current_path)
         {
-            string file_name = current_path + file_name_generator();
+            string file_name = current_path + file_name_generator(use_file_ext);
             System.Console.WriteLine("[+] " + file_name);
             if (File.Exists(file_name))
             {
@@ -116,7 +128,7 @@ namespace Junk_File_Creator
                 }
             }
         }
-        public static string file_name_generator()
+        public static string file_name_generator(bool use_file_ext)
         {
             List<char> generated_name = new List<char>();
             string char_string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -126,9 +138,16 @@ namespace Junk_File_Creator
                 generated_name.Add(char_string[rand.Next(0, char_string.Length)]);
             }
             generated_name.Add('.');
-            for (int i = 0; i <= rand.Next(0, 3); i++)
+            if (use_file_ext == true)
             {
-                generated_name.Add(char_string[rand.Next(0, char_string.Length)]);
+                generated_name.Add('T');
+            }
+            else
+            {
+                for (int i = 0; i <= rand.Next(0, 3); i++)
+                {
+                    generated_name.Add(char_string[rand.Next(0, char_string.Length)]);
+                }
             }
             string final_string = string.Join("", generated_name);
             return final_string;
