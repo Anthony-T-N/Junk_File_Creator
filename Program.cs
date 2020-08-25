@@ -130,9 +130,17 @@ namespace Junk_File_Creator
         }
         public static string file_name_generator(bool use_file_ext)
         {
+            List<string> common_file_ext = new List<string>()
+            {
+                "mp3", "wav", "ogg", ".mpa", "wma", "zip", "rar", 
+                "7z", "bin", "iso", "csv", "log", "dat", "ico", 
+                "jpeg", "png", "svg", "html", "mp4", "flv", "mpg", 
+                "swf", "wmv", "mov", "m4v", "mkv", "avi"
+            };
             List<char> generated_name = new List<char>();
             string char_string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
             var rand = new Random();
+            string final_string = "";
             for (int i = 0; i <= rand.Next(0, 5); i++)
             {
                 generated_name.Add(char_string[rand.Next(0, char_string.Length)]);
@@ -140,7 +148,7 @@ namespace Junk_File_Creator
             generated_name.Add('.');
             if (use_file_ext == true)
             {
-                generated_name.Add('T');
+                final_string = string.Join("", generated_name) + "34534534";
             }
             else
             {
@@ -148,8 +156,8 @@ namespace Junk_File_Creator
                 {
                     generated_name.Add(char_string[rand.Next(0, char_string.Length)]);
                 }
+                final_string = string.Join("", generated_name);
             }
-            string final_string = string.Join("", generated_name);
             return final_string;
         }
     }
