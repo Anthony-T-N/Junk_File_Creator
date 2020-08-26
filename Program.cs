@@ -28,7 +28,7 @@ namespace Junk_File_Creator
                 System.Console.WriteLine("2) Mutiple Junk Files: ");
                 System.Console.WriteLine("3) Periodically generate Junk Files: ");
                 System.Console.WriteLine("4) Change directory path: ");
-                System.Console.WriteLine("5) Use file extensions: ");
+                System.Console.WriteLine("5) File extensions switch ");
                 System.Console.WriteLine("6) Exit program.");
                 System.Console.WriteLine("");
                 System.Console.WriteLine("Current directory_path: " + current_path);
@@ -132,7 +132,7 @@ namespace Junk_File_Creator
         {
             List<string> common_file_ext = new List<string>()
             {
-                "mp3", "wav", "ogg", ".mpa", "wma", "zip", "rar", 
+                "mp3", "wav", "ogg", "mpa", "wma", "zip", "rar", 
                 "7z", "bin", "iso", "csv", "log", "dat", "ico", 
                 "jpeg", "png", "svg", "html", "mp4", "flv", "mpg", 
                 "swf", "wmv", "mov", "m4v", "mkv", "avi"
@@ -148,7 +148,7 @@ namespace Junk_File_Creator
             generated_name.Add('.');
             if (use_file_ext == true)
             {
-                final_string = string.Join("", generated_name) + "34534534";
+                final_string = string.Join("", generated_name) + common_file_ext[rand.Next(0, common_file_ext.Count - 1)]; ;
             }
             else
             {
