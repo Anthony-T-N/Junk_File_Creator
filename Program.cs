@@ -19,11 +19,13 @@ namespace Junk_File_Creator
         bool use_file_ext = false;
         public void menu()
         {
+            System.Console.WriteLine("Author: Anthony-T-N");
             System.Console.WriteLine("Welcome to the 'Junk_File_Creator'");
             System.Console.WriteLine("Please select one of the following option: ");
             while (true)
             {
                 System.Console.WriteLine("");
+                System.Console.WriteLine("-------------------------------------------------------------------------");
                 System.Console.WriteLine("1) Single Junk File: ");
                 System.Console.WriteLine("2) Mutiple Junk Files: ");
                 System.Console.WriteLine("3) Periodically generate Junk Files: ");
@@ -33,7 +35,7 @@ namespace Junk_File_Creator
                 System.Console.WriteLine("");
                 System.Console.WriteLine("Current directory_path: " + current_path);
                 System.Console.WriteLine("Use existing file extensions: " + use_file_ext);
-                System.Console.WriteLine("");
+                System.Console.WriteLine("-------------------------------------------------------------------------");
                 string user_input = Console.ReadLine();
                 int converted_user_input = 0;
                 try
