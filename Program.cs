@@ -71,7 +71,16 @@ namespace Junk_File_Creator
                 else if (converted_user_input == 4)
                 {
                     System.Console.WriteLine("Enter new path directory");
-                    current_path = @"" + Console.ReadLine();
+                    string temp_current_path = @"" + Console.ReadLine();
+                    if (Directory.Exists(current_path))
+                    {
+                        current_path = temp_current_path;
+                        System.Console.WriteLine("[+] Legal path directory");
+                    }
+                    else
+                    {
+                        System.Console.WriteLine($"[-] Invalid path directory: '{temp_current_path}'");
+                    }
                 }
                 else if (converted_user_input == 5)
                 {
