@@ -7,7 +7,6 @@ namespace Junk_File_Creator
 {
     class Program
     {
-        // Use common file extensions.
         // Control file size.
         static void Main(string[] args)
         {
@@ -30,7 +29,7 @@ namespace Junk_File_Creator
                 System.Console.WriteLine("2) Mutiple Junk Files: ");
                 System.Console.WriteLine("3) Periodically generate Junk Files: ");
                 System.Console.WriteLine("4) Change directory path: ");
-                System.Console.WriteLine("5) File extensions switch ");
+                System.Console.WriteLine("5) File extensions switch (True/False) ");
                 System.Console.WriteLine("6) Exit program.");
                 System.Console.WriteLine("");
                 System.Console.WriteLine("Current directory_path: " + current_path);
@@ -76,6 +75,10 @@ namespace Junk_File_Creator
                     string temp_current_path = @"" + Console.ReadLine();
                     if (Directory.Exists(current_path))
                     {
+                        if (!temp_current_path.EndsWith(@"\"))
+                        {
+                            temp_current_path += @"\";
+                        }
                         current_path = temp_current_path;
                         System.Console.WriteLine("[+] Legal path directory");
                     }
@@ -86,6 +89,7 @@ namespace Junk_File_Creator
                 }
                 else if (converted_user_input == 5)
                 {
+                    System.Console.WriteLine("[+] File extension switched");
                     if (use_file_ext == false)
                     {
                         use_file_ext = true;
