@@ -64,7 +64,9 @@ namespace Junk_File_Creator
                 }
                 else if (converted_user_input == 3)
                 {
-                    Timer t = new Timer(TimeSpan.FromMinutes(0.1).TotalMilliseconds);
+                    System.Console.WriteLine("File created per ? seconds: ");
+                    int file_per_seconds = Convert.ToInt32(Console.ReadLine());
+                    Timer t = new Timer(TimeSpan.FromSeconds(file_per_seconds).TotalMilliseconds);
                     t.AutoReset = true;
                     t.Elapsed += new System.Timers.ElapsedEventHandler(periodical_creation);
                     t.Start();
