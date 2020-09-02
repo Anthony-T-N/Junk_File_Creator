@@ -3,3 +3,6 @@
 ![version](https://img.shields.io/badge/version-1.0.0-yellow.svg)
 
 # Junk_File_Creator
+
+Usage
+-
