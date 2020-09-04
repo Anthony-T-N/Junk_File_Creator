@@ -9,3 +9,7 @@
 
 Usage
 -
+-
+<p align="center"> 
+<img src="/menu_sample.PNG">
+</p>
