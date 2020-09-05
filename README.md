@@ -14,11 +14,11 @@ Usage
 </p>
 
 
-```sh
-1)
-2)
-3)
-4)
-5)
-6)
+```bash
+1) Single Junk File:
+2) Mutiple Junk Files:
+3) Periodically generate Junk Files:
+4) Change directory path:
+5) File extensions switch (True/False)
+6) Exit progrom.
 ```
