@@ -12,3 +12,13 @@ Usage
 <p align="center"> 
 <img src="/menu_sample.PNG">
 </p>
+
+
+```sh
+1)
+2)
+3)
+4)
+5)
+6)
+```
