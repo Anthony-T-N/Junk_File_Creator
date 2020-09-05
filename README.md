@@ -14,7 +14,7 @@ Usage
 </p>
 
 
-```bash
+```sh
 1) Single Junk File:
 2) Mutiple Junk Files:
 3) Periodically generate Junk Files:
