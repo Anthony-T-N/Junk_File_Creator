@@ -13,7 +13,8 @@ Usage
 <img src="/menu_sample.PNG">
 </p>
 
-
+Options
+-
 ```sh
 1) Single Junk File:
 2) Mutiple Junk Files:
