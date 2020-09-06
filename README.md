@@ -7,6 +7,8 @@
 
 # Junk_File_Creator
 
+A command-line application (using .NET Core) that can generate randomly named files with random extensions.
+
 Usage
 -
 <p align="center"> 
