@@ -25,3 +25,6 @@ Options
 5) File extensions switch (True/False)
 6) Exit progrom.
 ```
+
+Planned features
+-
