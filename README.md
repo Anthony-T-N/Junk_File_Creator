@@ -9,14 +9,16 @@
 
 A console application (using .NET Core) that can generate randomly named files with random extensions in the directory path of the user's choosing. Option to to created randomly named files with known file extensions such as 'mp3', 'mp4', 'jpeg' & '7z'.
 
-Usage
+Placeholder
 -
 <p align="center"> 
 <img src="/menu_sample.PNG">
 </p>
 
-Options
+Usage
 -
+Options
+
 ```sh
 1) Single Junk File:
 2) Mutiple Junk Files:
