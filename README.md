@@ -7,6 +7,8 @@
 
 # Junk_File_Creator
 
+Overview
+-
 A console application (using .NET Core) that can generate randomly named files with random extensions in the directory path of the user's choosing. Option to to created randomly named files with known file extensions such as 'mp3', 'mp4', 'jpeg' & '7z'.
 
 Placeholder
