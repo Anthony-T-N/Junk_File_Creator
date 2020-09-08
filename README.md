@@ -17,7 +17,7 @@ Placeholder
 
 Usage
 -
-Options
+Options:
 
 ```sh
 1) Single Junk File:
