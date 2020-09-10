@@ -30,3 +30,4 @@ Options:
 
 Planned features
 -
+- Randomly create files with randomised size.
