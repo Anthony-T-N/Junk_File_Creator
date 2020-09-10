@@ -31,3 +31,4 @@ Options:
 Planned features
 -
 - Randomly create files with randomised size.
+- Autocomplete directory paths using tab when changing file location through command console.
